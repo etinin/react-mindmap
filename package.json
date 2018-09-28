@@ -23,11 +23,12 @@
     "parse": "node src/parser/index.js",
     "lint": "eslint .; sass-lint sass/* -v",
     "pre-build": "rollup -c && uglifyjs dist/d3.js -c -m -o dist/d3.min.js",
-    "build": "npm run pre-build && webpack && cp dist/index.js test/react-mindmap.js",
-    "prepare": "npm run build && rm dist/d3.min.js dist/d3.js",
-    "test": "npm run build && cp dist/index.js test/react-mindmap.js && cd test && static-server -p 3000"
+    "build": "npm run pre-build && webpack && copy dist/index.js test/react-mindmap.js",
+    "prepare": "npm run build && del dist/d3.min.js dist/d3.js",
+    "test": "npm run build && copy dist/index.js test/react-mindmap.js && cd test && static-server -p 3000"
   },
   "dependencies": {
+    "babel-preset-react-app": "^3.1.2",
     "d3": "^4.9.1",
     "fs-walk": "0.0.1",
     "prop-types": "^15.6.0",

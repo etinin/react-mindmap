@@ -12,6 +12,7 @@ module.exports = {
   rules: {
     'react/jsx-uses-vars': 'error',
     'react/jsx-uses-react': 'error',
+    "linebreak-style": 0
   },
 
   parserOptions: {
